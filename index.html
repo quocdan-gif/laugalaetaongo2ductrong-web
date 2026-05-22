@@ -32,17 +32,20 @@
         ::-webkit-scrollbar-track { background: #f1f1f1; }
         ::-webkit-scrollbar-thumb { background: #cbd5e1; border-radius: 10px; }
         ::-webkit-scrollbar-thumb:hover { background: #94a3b8; }
+        
+        /* CSS chuẩn cho máy in nhiệt K80 */
         @media print {
             @page { size: 80mm auto; margin: 0; }
             body * { visibility: hidden; }
             #print-area, #print-area * { visibility: visible; color: #000; font-family: monospace; }
-            #print-area { position: absolute; left: 0; top: 0; width: 76mm; padding: 2mm; font-size: 12px; line-height: 1.2; }
+            #print-area { position: absolute; left: 0; top: 0; width: 76mm; padding: 2mm; font-size: 13px; line-height: 1.4; }
+            .print-hidden { display: none !important; }
         }
     </style>
 </head>
 <body class="bg-gray-50 text-gray-800 antialiased font-sans relative">
 
-    <div id="review-sidebar" class="fixed top-0 left-0 h-full w-80 sm:w-96 bg-white shadow-2xl z-50 transform -translate-x-full transition-transform duration-300 flex flex-col border-r">
+    <div id="review-sidebar" class="fixed top-0 left-0 h-full w-80 sm:w-96 bg-white shadow-2xl z-50 transform -translate-x-full transition-transform duration-300 flex flex-col border-r print-hidden">
         <div class="p-4 bg-brand-green text-white flex justify-between items-center">
             <h3 class="font-serif text-lg font-bold"><i class="fas fa-comments mr-2"></i>Đánh Ngon & Bình Luận</h3>
             <button onclick="window.toggleReviewSidebar()" class="text-white hover:text-brand-orange text-xl"><i class="fas fa-times"></i></button>
@@ -69,13 +72,12 @@
         <div class="flex-1 overflow-y-auto p-4 space-y-4" id="sidebar-reviews-list"></div>
     </div>
 
-    <button onclick="window.toggleReviewSidebar()" class="fixed left-0 top-1/4 bg-brand-orange hover:bg-red-600 text-white p-3 rounded-r-xl shadow-lg z-40 transition flex flex-col items-center gap-2 font-bold text-xs tracking-wider">
+    <button onclick="window.toggleReviewSidebar()" class="fixed left-0 top-1/4 bg-brand-orange hover:bg-red-600 text-white p-3 rounded-r-xl shadow-lg z-40 transition flex flex-col items-center gap-2 font-bold text-xs tracking-wider print-hidden">
         <i class="fas fa-star text-base animate-pulse"></i>
         <span class="[writing-mode:vertical-lr]">XEM ĐÁNH GIÁ</span>
     </button>
 
-
-    <div id="customer-site-view" class="block">
+    <div id="customer-site-view" class="block print-hidden">
         <nav class="bg-brand-green text-white shadow-lg sticky top-0 z-30">
             <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                 <div class="flex justify-between h-16 items-center">
@@ -155,7 +157,7 @@
                         <div class="space-y-4">
                             <div class="bg-white rounded-xl p-3 flex items-center gap-4 border border-orange-200 border-opacity-50 hover:shadow-md transition duration-300">
                                 <div class="w-20 h-20 flex-shrink-0 rounded-lg overflow-hidden border border-gray-200">
-                                    <img src="images/z7854161804035_57da253602a277eda2e5ae63b5fbdccd" alt="Lẩu Gà Lá É" class="w-full h-full object-cover hover:scale-110 transition duration-300" onerror="this.src='https://images.unsplash.com/photo-1547058881-aa0edd92aab3?auto=format&fit=crop&w=150&q=80'">
+                                    <img src="images/z7854161804035_57da253602a277eda2e5ae63b5fbdccd.jpg" alt="Lẩu Gà Lá É" class="w-full h-full object-cover hover:scale-110 transition duration-300" onerror="this.src='https://images.unsplash.com/photo-1547058881-aa0edd92aab3?auto=format&fit=crop&w=150&q=80'">
                                 </div>
                                 <div class="flex-grow">
                                     <h4 class="font-bold text-gray-900 text-base md:text-lg">1. Lẩu Gà Lá É</h4>
@@ -172,7 +174,7 @@
                                     <img src="images/z7854161770106_70a4f14d633a96f7ec11f7bde986c53a.jpg" alt="Gỏi Gà" class="w-full h-full object-cover hover:scale-110 transition duration-300" onerror="this.src='https://images.unsplash.com/photo-1546069901-ba9599a7e63c?auto=format&fit=crop&w=150&q=80'">
                                 </div>
                                 <div class="flex-grow">
-                                    <h4 class="font-bold text-gray-900 text-base md:text-lg">2. Gỏi Gà Trộn Đều</h4>
+                                    <h4 class="font-bold text-gray-900 text-base md:text-lg">2. Gỏi Gà </h4>
                                     <p class="text-xs text-gray-500">Hành tây, rau răm bóp thấu chua ngọt</p>
                                 </div>
                                 <div class="text-right">
@@ -239,7 +241,7 @@
 
                             <div class="bg-white rounded-xl p-3 flex items-center gap-4 border border-orange-200 border-opacity-50 hover:shadow-md transition duration-300">
                                 <div class="w-20 h-20 flex-shrink-0 rounded-lg overflow-hidden border border-gray-200">
-                                    <img src="images/z774566269_trungnon.jpg" alt="Trứng Non" class="w-full h-full object-cover hover:scale-110 transition duration-300" onerror="this.src='https://images.unsplash.com/photo-1504674900247-0877df9cc836?auto=format&fit=crop&w=150&q=80'">
+                                    <img src="images/z7854161771537_27b3bf8ddbc81b514a09585e6457c8d4.jpg" alt="Trứng Non" class="w-full h-full object-cover hover:scale-110 transition duration-300" onerror="this.src='https://images.unsplash.com/photo-1504674900247-0877df9cc836?auto=format&fit=crop&w=150&q=80'">
                                 </div>
                                 <div class="flex-grow">
                                     <h4 class="font-bold text-gray-900 text-base md:text-lg">7. Trứng Gà Non</h4>
@@ -297,7 +299,7 @@
                                     <div class="space-y-2 text-sm md:text-base">
                                         <div class="flex justify-between p-2 bg-white rounded border">
                                             <span class="font-semibold">Đĩa Rau hoặc Bún thêm</span>
-                                            <span class="text-brand-green font-bold">10.000 đ / Dĩa</span>
+                                            <span class="text-brand-green font-bold">15.000 đ / Dĩa</span>
                                         </div>
                                         <div class="flex justify-between p-2 bg-white rounded border">
                                             <span class="font-semibold">Túi Đậu Hủ Ky giòn</span>
@@ -316,9 +318,6 @@
                             </div>
                         </div>
                         
-                        <div class="w-full h-32 rounded-xl overflow-hidden mt-4 border border-gray-100 shadow-inner">
-                            <img src="https://images.unsplash.com/photo-1555939594-58d7cb561ad1?auto=format&fit=crop&w=500&q=80" alt="Không gian phục vụ lẩu gà" class="w-full h-full object-cover opacity-90">
-                        </div>
                     </div>
 
                 </div>
@@ -379,12 +378,11 @@
         </footer>
     </div>
 
-
-    <div id="login-screen" class="fixed inset-0 bg-slate-800 z-[100] flex items-center justify-center hidden">
+    <div id="login-screen" class="fixed inset-0 bg-slate-800 z-[100] flex items-center justify-center hidden print-hidden">
         <div class="bg-white p-8 rounded-xl shadow-2xl w-96 max-w-[90%] text-center relative">
             <button onclick="window.closeLoginGate()" class="absolute top-4 right-4 text-gray-400 hover:text-gray-600"><i class="fas fa-times text-xl"></i></button>
             <h2 class="text-2xl font-bold text-red-700 mb-1">TAO NGỘ 2</h2>
-            <p class="text-slate-500 text-sm mb-6">Đăng nhập hệ thống POS & Admin bài đăng</p>
+            <p class="text-slate-500 text-sm mb-6">Đăng nhập hệ thống 226 POS</p>
             <div class="space-y-4">
                 <select id="login-role" onchange="window.toggleLoginField()" class="w-full px-4 py-3 border rounded-lg font-bold text-slate-700 bg-white">
                     <option value="admin">Chủ quán (Admin)</option>
@@ -397,18 +395,18 @@
         </div>
     </div>
 
-
-    <div class="fixed inset-0 bg-slate-100 z-[45] flex flex-col md:flex-row h-full w-full hidden overflow-hidden" id="main-app">
+    <div class="fixed inset-0 bg-slate-100 z-[45] flex flex-col md:flex-row h-full w-full hidden overflow-hidden print-hidden" id="main-app">
         <div class="w-full md:w-2/3 h-2/3 md:h-full flex flex-col bg-white order-2 md:order-1">
             <div class="bg-red-700 text-white p-4 shadow-md flex justify-between items-center z-10">
-                <h1 class="text-xl font-bold uppercase">Hệ Thống Bán Hàng POS - Tao Ngộ 2</h1>
+                <h1 class="text-xl font-bold uppercase tracking-wide">Hệ Thống Bán Hàng 226 POS</h1>
                 <div class="flex items-center space-x-4">
                     <div class="text-right border-r border-red-500 pr-4">
                         <p class="font-bold text-sm" id="user-display-name">Chủ quán</p>
                         <p class="text-[11px] text-red-200" id="user-display-role">Quản lý</p>
                     </div>
                     <div class="flex space-x-2">
-                        <button id="btn-admin-panel" onclick="window.openAdminModal()" class="hidden bg-white text-red-700 px-3 py-1.5 rounded text-xs font-bold shadow hover:bg-red-50"><i class="fas fa-edit mr-1"></i>Đăng tin & Duyệt bình luận</button>
+                        <button id="btn-manage-menu" onclick="window.openMenuModal()" class="hidden bg-green-600 text-white px-3 py-1.5 rounded text-xs font-bold shadow hover:bg-green-700"><i class="fas fa-plus mr-1"></i>Thêm món mới</button>
+                        <button id="btn-admin-panel" onclick="window.openAdminModal()" class="hidden bg-white text-red-700 px-3 py-1.5 rounded text-xs font-bold shadow hover:bg-red-50"><i class="fas fa-edit mr-1"></i>Đăng tin & Duyệt BL</button>
                         <button onclick="window.handleLogout()" class="bg-red-900 text-white px-3 py-1.5 rounded text-xs font-bold shadow hover:bg-black"><i class="fas fa-sign-out-alt mr-1"></i>Thoát ra trang chủ</button>
                     </div>
                 </div>
@@ -422,30 +420,76 @@
                 <div class="flex items-center space-x-2 w-full">
                     <label for="table-select" class="font-bold text-slate-700 whitespace-nowrap text-sm">Bàn số:</label>
                     <select id="table-select" onchange="window.changeTable()" class="block w-full border rounded p-1.5 bg-white font-bold text-base focus:ring-red-500">
-                        <option value="mang_di">Mang đi</option><option value="ban_1">Bàn 1</option><option value="ban_2">Bàn 2</option><option value="ban_3">Bàn 3</option><option value="ban_4">Bàn 4</option><option value="ban_5">Bàn 5</option>
-                    </select>
+                        </select>
                 </div>
-            </div>
-            <div id="print-area" class="hidden bg-white p-2 text-black">
-                <div class="text-center mb-2 border-b border-dashed border-gray-400 pb-1"><h2 class="text-base font-bold uppercase">Lẩu Gà Lá É Tao Ngộ 2</h2></div>
-                <div class="text-center mb-2"><h3 class="text-xs font-bold uppercase">Hóa Đơn</h3><p id="print-table-num" class="font-bold text-xs"></p><p id="print-time" class="text-[10px]"></p></div>
-                <table class="w-full text-[11px] mb-2 border-t border-dashed border-gray-400 mt-1"><thead><tr class="border-b border-dashed border-gray-400"><th class="text-left py-1">Tên món</th><th class="text-center py-1">SL</th><th class="text-right py-1">Thành tiền</th></tr></thead><tbody id="print-cart-items"></tbody></table>
-                <div class="border-t border-dashed border-gray-400 pt-2 flex justify-between font-bold text-xs"><span>TỔNG CỘNG:</span><span id="print-total"></span></div>
             </div>
             <div class="flex-1 overflow-y-auto p-2" id="cart-items"></div>
             <div class="border-t bg-white p-4">
                 <div class="flex justify-between items-center mb-3"><span class="text-sm font-bold text-slate-600">Tổng thanh toán:</span><span class="text-2xl font-bold text-red-600" id="total-price">0 đ</span></div>
                 <div class="grid grid-cols-2 gap-2">
                     <button onclick="window.clearCart()" class="bg-slate-200 text-slate-700 font-bold py-2.5 rounded text-xs hover:bg-slate-300">Xóa bàn trống</button>
-                    <button id="btn-checkout" onclick="window.checkout()" class="hidden bg-red-600 text-white font-bold py-2.5 rounded text-xs hover:bg-red-700">In & Thanh Toán</button>
+                    <button id="btn-checkout" onclick="window.checkout()" class="hidden bg-red-600 text-white font-bold py-2.5 rounded text-xs hover:bg-red-700"><i class="fas fa-print mr-1"></i>In & Thanh Toán</button>
                     <button id="btn-save-order" onclick="window.saveOrderStaff()" class="hidden bg-blue-600 text-white font-bold py-2.5 rounded text-xs hover:bg-blue-700">Gửi order nhà bếp</button>
                 </div>
             </div>
         </div>
     </div>
 
+    <div id="print-area" class="hidden bg-white text-black">
+        <div class="text-center mb-2 border-b border-dashed border-gray-500 pb-2">
+            <h2 class="text-lg font-bold uppercase">LẨU GÀ LÁ É TAO NGỘ 2</h2>
+            <p class="text-xs">Đức Trọng, Lâm Đồng</p>
+        </div>
+        <div class="text-center mb-2">
+            <h3 class="text-sm font-bold uppercase">Phiếu Thanh Toán</h3>
+            <p id="print-table-num" class="font-bold text-xs mt-1"></p>
+            <p id="print-time" class="text-[11px]"></p>
+        </div>
+        <table class="w-full text-xs mb-2 border-t border-dashed border-gray-500 mt-2">
+            <thead>
+                <tr class="border-b border-dashed border-gray-500">
+                    <th class="text-left py-2">Tên món</th>
+                    <th class="text-center py-2 w-8">SL</th>
+                    <th class="text-right py-2 w-16">Tiền</th>
+                </tr>
+            </thead>
+            <tbody id="print-cart-items"></tbody>
+        </table>
+        <div class="border-t border-dashed border-gray-500 pt-2 flex justify-between font-bold text-sm mt-2 mb-4">
+            <span>TỔNG CỘNG:</span>
+            <span id="print-total"></span>
+        </div>
+        <div class="text-center mb-2">
+            <p class="text-xs font-bold mb-1">Quét mã QR để thanh toán</p>
+            <img id="print-qr-code" src="" alt="QR Code" class="w-40 h-40 mx-auto border p-1 rounded">
+        </div>
+        <div class="text-center border-t border-dashed border-gray-500 pt-2">
+            <p class="text-xs italic">Cảm ơn quý khách đã dùng bữa!</p>
+            <p class="text-[10px] text-gray-500 mt-1">Phần mềm quản lý 226 POS</p>
+        </div>
+    </div>
 
-    <div id="admin-modal" class="fixed inset-0 bg-black bg-opacity-50 z-[110] hidden flex items-center justify-center">
+    <div id="menu-modal" class="fixed inset-0 bg-black bg-opacity-50 z-[110] hidden flex items-center justify-center print-hidden">
+        <div class="bg-white rounded-xl shadow-2xl w-96 max-w-[95%]">
+            <div class="p-4 border-b flex justify-between items-center bg-green-50 rounded-t-xl">
+                <h3 class="text-lg font-bold text-green-800"><i class="fas fa-plus-circle mr-2"></i>Thêm Món Mới</h3>
+                <button onclick="window.closeMenuModal()" class="text-slate-500 hover:text-red-500"><i class="fas fa-times text-xl"></i></button>
+            </div>
+            <div class="p-6 space-y-4">
+                <input type="text" id="new-item-name" placeholder="Tên món ăn..." class="w-full border p-2 text-sm rounded bg-white">
+                <input type="number" id="new-item-price" placeholder="Giá tiền (VNĐ)..." class="w-full border p-2 text-sm rounded bg-white">
+                <select id="new-item-category" class="w-full border p-2 text-sm rounded bg-white">
+                    <option value="main">Món Đặc Biệt (Lẩu, Gỏi...)</option>
+                    <option value="drink">Nước Giải Khát</option>
+                    <option value="alcohol">Rượu</option>
+                    <option value="extra">Đồ Nhúng Thêm</option>
+                </select>
+                <button onclick="window.addNewProduct()" class="w-full bg-green-600 text-white font-bold py-2 rounded text-sm hover:bg-green-700 transition shadow-md">Lưu Món Ăn</button>
+            </div>
+        </div>
+    </div>
+
+    <div id="admin-modal" class="fixed inset-0 bg-black bg-opacity-50 z-[110] hidden flex items-center justify-center print-hidden">
         <div class="bg-white rounded-xl shadow-2xl w-[750px] max-w-[95%] max-h-[92vh] flex flex-col" id="admin-modal-content">
             <div class="p-4 border-b flex justify-between items-center bg-slate-50 rounded-t-xl">
                 <h3 class="text-lg font-bold text-slate-800"><i class="fas fa-user-tie mr-2 text-brand-green"></i>Hệ Thống Quản Trị Bài Đăng & Bình Luận - Chủ Quán</h3>
@@ -460,7 +504,14 @@
                             <input type="text" id="news-input-tag" placeholder="Mác bài viết (Ví dụ: Món Mới, Khuyến Mãi...)" class="border p-2 text-xs rounded bg-white w-full">
                             <input type="text" id="news-input-title" placeholder="Tiêu đề nội dung nổi bật..." class="border p-2 text-xs rounded bg-white w-full">
                         </div>
-                        <input type="text" id="news-input-media" placeholder="Đường dẫn Link ảnh mạng hoặc Link Video Clip YouTube..." class="w-full border p-2 text-xs rounded bg-white">
+                        
+                        <div id="drop-zone" class="border-2 border-dashed border-brand-orange bg-white rounded-lg p-6 text-center cursor-pointer hover:bg-orange-50 transition" onclick="document.getElementById('file-input').click()">
+                            <i class="fas fa-cloud-upload-alt text-3xl text-brand-orange mb-2"></i>
+                            <p class="text-gray-600 text-sm font-semibold" id="drop-zone-text">Kéo thả ảnh/video vào đây hoặc Nhấn để chọn tệp</p>
+                            <input type="file" id="file-input" class="hidden" accept="image/*,video/*" onchange="window.handleFileUpload(event)">
+                            <img id="preview-image" class="hidden mt-4 max-h-40 mx-auto rounded shadow-md object-cover" />
+                        </div>
+
                         <textarea id="news-input-desc" rows="2" placeholder="Viết mô tả ngắn gọn hiển thị trên trang chủ..." class="w-full border p-2 text-xs rounded bg-white"></textarea>
                         <button onclick="window.createNewPostAdmin()" class="bg-brand-green text-white font-bold px-5 py-2 rounded text-xs hover:bg-emerald-800 transition">
                             <i class="fas fa-upload mr-1"></i> Xuất bản lên Trang chủ
@@ -495,7 +546,7 @@
         </div>
     </div>
 
-    <div id="modal" class="fixed inset-0 bg-black bg-opacity-50 z-[120] hidden flex items-center justify-center">
+    <div id="modal" class="fixed inset-0 bg-black bg-opacity-50 z-[120] hidden flex items-center justify-center print-hidden">
         <div class="bg-white rounded-xl p-6 max-w-sm w-full text-center" id="modal-content">
             <h3 class="text-lg font-bold text-slate-800" id="modal-title">...</h3>
             <p class="text-xs text-slate-500 mt-2" id="modal-message">...</p>
@@ -505,7 +556,6 @@
 
 
     <script>
-        // Điều hướng Menu điện thoại
         const mBtn = document.getElementById('mobile-menu-btn');
         const mMenu = document.getElementById('mobile-menu');
         if(mBtn && mMenu) {
@@ -529,29 +579,39 @@
             { id: "all", name: "Tất cả món" }, { id: "main", name: "Món Đặc Biệt" },
             { id: "drink", name: "Nước" }, { id: "alcohol", name: "Rượu" }, { id: "extra", name: "Món Thêm" }
         ];
-        const products = [
-            { id: 1, name: "Lẩu Gà Lá É (Nhỏ)", price: 200000, category: "main", color: "bg-orange-100 text-orange-800" },
-            { id: 2, name: "Lẩu Gà Lá É (Vừa)", price: 250000, category: "main", color: "bg-orange-100 text-orange-800" },
-            { id: 3, name: "Lẩu Gà Lá É (Lớn)", price: 300000, category: "main", color: "bg-orange-100 text-orange-800" },
-            { id: 4, name: "Gỏi Gà", price: 100000, category: "main", color: "bg-yellow-100 text-yellow-800" },
-            { id: 5, name: "Chân Gà Chiên Giòn", price: 70000, category: "main", color: "bg-yellow-100 text-yellow-800" },
-            { id: 6, name: "Lòng Xào Cải Xanh", price: 70000, category: "main", color: "bg-green-100 text-green-800" },
-            { id: 7, name: "Cánh Gà Chiên Mắm", price: 25000, category: "main", color: "bg-yellow-100 text-yellow-800" },
-            { id: 8, name: "Ngọc Kê (1 Lạng)", price: 70000, category: "main", color: "bg-red-100 text-red-800" },
-            { id: 9, name: "Trứng Non (2 Lạng)", price: 70000, category: "main", color: "bg-red-100 text-red-800" },
-            { id: 10, name: "Nước Ngọt (Lon)", price: 15000, category: "drink", color: "bg-blue-100 text-blue-800" },
-            { id: 11, name: "Nước Lọc (Chai)", price: 10000, category: "drink", color: "bg-blue-100 text-blue-800" },
-            { id: 12, name: "Rượu Trắng (Chai)", price: 20000, category: "alcohol", color: "bg-purple-100 text-purple-800" },
-            { id: 18, name: "Rau, Bún (Đĩa)", price: 10000, category: "extra", color: "bg-emerald-100 text-emerald-800" },
-            { id: 19, name: "Đậu Hủ Ky (Túi)", price: 20000, category: "extra", color: "bg-emerald-100 text-emerald-800" },
-            { id: 20, name: "Mì (Gói)", price: 5000, category: "extra", color: "bg-emerald-100 text-emerald-800" },
-            { id: 21, name: "Lẩu Thêm (Nhỏ)", price: 100000, category: "extra", color: "bg-orange-100 text-orange-800" },
-            { id: 22, name: "Lẩu Thêm (Lớn)", price: 150000, category: "extra", color: "bg-orange-100 text-orange-800" }
+
+        const defaultProducts = [
+            { id: 1, name: "Lẩu Gà Lá É (Nhỏ)", price: 200000, category: "main" },
+            { id: 2, name: "Lẩu Gà Lá É (Vừa)", price: 250000, category: "main" },
+            { id: 3, name: "Lẩu Gà Lá É (Lớn)", price: 300000, category: "main" },
+            { id: 4, name: "Gỏi Gà", price: 100000, category: "main" },
+            { id: 5, name: "Chân Gà Chiên Giòn", price: 70000, category: "main" },
+            { id: 6, name: "Lòng Xào Cải Xanh", price: 70000, category: "main" },
+            { id: 7, name: "Cánh Gà Chiên Mắm", price: 25000, category: "main" },
+            { id: 8, name: "Ngọc Kê (1 Lạng)", price: 70000, category: "main" },
+            { id: 9, name: "Trứng Non (2 Lạng)", price: 70000, category: "main" },
+            { id: 10, name: "Nước Ngọt (Lon)", price: 15000, category: "drink" },
+            { id: 11, name: "Nước Lọc (Chai)", price: 10000, category: "drink" },
+            { id: 12, name: "Rượu Trắng (Chai)", price: 20000, category: "alcohol" },
+            { id: 13, name: "Trắng + Atixo", price: 25000, category: "alcohol" },
+            { id: 14, name: "Rượu Chuối Hột", price: 50000, category: "alcohol" },
+            { id: 15, name: "Rượu Táo Mèo", price: 80000, category: "alcohol" },
+            { id: 16, name: "Rượu Men nhỏ", price: 80000, category: "alcohol" },
+            { id: 17, name: "Rượu Men lớn", price: 100000, category: "alcohol" },
+            { id: 18, name: "Rau, Bún (Đĩa)", price: 10000, category: "extra" },
+            { id: 19, name: "Đậu Hủ Ky (Túi)", price: 20000, category: "extra" },
+            { id: 20, name: "Mì (Gói)", price: 5000, category: "extra" },
+            { id: 21, name: "Lẩu Thêm (Nhỏ)", price: 100000, category: "extra" },
+            { id: 22, name: "Lẩu Thêm (Lớn)", price: 150000, category: "extra" }
         ];
+
+        let products = JSON.parse(localStorage.getItem('pos_226_products')) || defaultProducts;
 
         let tablesData = {}; let currentTableId = "mang_di"; let currentCategory = "all"; let currentUser = null;
         let selectedReviewStarsCount = 5; let localNewsArticles = []; let localCustomerReviews = [];
+        let uploadedMediaBase64 = "";
 
+        // Dữ liệu User mẫu đã bị loại bỏ theo đúng định hướng trước đó
         let users = JSON.parse(localStorage.getItem('pos_users')) || [
             { username: 'admin', password: 'admin', role: 'admin' },
             { username: 'nhanvien', password: '1', role: 'staff' }
@@ -560,6 +620,18 @@
         const firebaseConfigStr = typeof __firebase_config !== 'undefined' ? __firebase_config : null;
         const appId = typeof __app_id !== 'undefined' ? __app_id : 'tao-ngo-2-pos';
         let db, tablesRef, dbReady = false;
+
+        const setupTables = () => {
+            const tableSelect = document.getElementById('table-select');
+            let optionsHtml = `<option value="mang_di">Mang đi</option>`;
+            tablesData["mang_di"] = [];
+            for(let i=1; i<=20; i++) {
+                const val = `ban_${i}`;
+                optionsHtml += `<option value="${val}">Bàn ${i}</option>`;
+                tablesData[val] = [];
+            }
+            tableSelect.innerHTML = optionsHtml;
+        };
 
         window.toggleReviewSidebar = () => document.getElementById('review-sidebar').classList.toggle('-translate-x-full');
 
@@ -570,6 +642,7 @@
         };
 
         const initSystem = async () => {
+            setupTables();
             if (firebaseConfigStr) {
                 try {
                     const app = initializeApp(JSON.parse(firebaseConfigStr));
@@ -579,7 +652,6 @@
                     const globalDataDocRef = doc(db, 'artifacts', appId, 'public', 'global_marketing');
                     
                     await signInAnonymously(auth);
-                    document.querySelectorAll('#table-select option').forEach(opt => tablesData[opt.value] = []);
 
                     onSnapshot(tablesRef, (snapshot) => {
                         snapshot.docChanges().forEach(change => tablesData[change.doc.id] = change.doc.data().cart || []);
@@ -603,13 +675,8 @@
         };
 
         const setupLocalFallbackData = () => {
-            localNewsArticles = JSON.parse(localStorage.getItem('fallback_news')) || [
-                { id: "1", tag: "Món Ăn Thêm", title: "Có thêm đĩa Ngọc Kê Gà và Trứng Non trứ danh nhúng kèm lẩu", media: "https://images.unsplash.com/photo-1555939594-58d7cb561ad1?auto=format&fit=crop&w=500&q=80", desc: "Sự kết hợp hoàn hảo tăng cường độ bổ dưỡng cho thực khách giải cảm." },
-                { id: "2", tag: "Cơ Sở Mới", title: "Khai trương cơ sở 2 rộng rãi tại Liên Nghĩa, Đức Trọng", media: "https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?auto=format&fit=crop&w=500&q=80", desc: "Không gian thoáng mát, bãi đỗ ô tô rộng lớn tiện lợi cho cả đại gia đình." }
-            ];
-            localCustomerReviews = JSON.parse(localStorage.getItem('fallback_reviews')) || [
-                { id: "1", name: "Quốc Dân", stars: 5, comment: "Nước lẩu chuẩn vị Phú Yên, thịt gà ta dai chắc rất ngon!" }
-            ];
+            localNewsArticles = JSON.parse(localStorage.getItem('fallback_news')) || [];
+            localCustomerReviews = JSON.parse(localStorage.getItem('fallback_reviews')) || [];
             window.renderDynamicHomepageNews(); window.renderDynamicCustomerReviews();
         };
 
@@ -623,6 +690,20 @@
             }
         };
 
+        window.handleFileUpload = (e) => {
+            const file = e.target.files[0];
+            if(file) {
+                const reader = new FileReader();
+                reader.onload = (event) => {
+                    uploadedMediaBase64 = event.target.result;
+                    document.getElementById('preview-image').src = uploadedMediaBase64;
+                    document.getElementById('preview-image').classList.remove('hidden');
+                    document.getElementById('drop-zone-text').classList.add('hidden');
+                };
+                reader.readAsDataURL(file);
+            }
+        };
+
         window.renderDynamicHomepageNews = () => {
             const grid = document.getElementById('homepage-news-grid');
             if(!grid) return;
@@ -633,7 +714,7 @@
             grid.innerHTML = localNewsArticles.map(post => `
                 <div class="bg-white rounded-2xl overflow-hidden border border-gray-100 shadow-sm flex flex-col hover:shadow-md transition">
                     <div class="h-48 overflow-hidden bg-gray-100 flex items-center justify-center">
-                        <img src="${post.media}" class="w-full h-full object-cover" onerror="this.src='https://images.unsplash.com/photo-1504674900247-0877df9cc836?auto=format&fit=crop&w=400&q=80'">
+                        <img src="${post.media}" class="w-full h-full object-cover">
                     </div>
                     <div class="p-5 flex-1 flex flex-col justify-between">
                         <div class="space-y-1.5">
@@ -668,7 +749,7 @@
             }
 
             const adminTable = document.getElementById('admin-comments-management-list');
-            if(adminReviewTable) {
+            if(adminTable) {
                 adminTable.innerHTML = localCustomerReviews.length === 0 ? `<tr><td colspan="4" class="p-3 text-center text-gray-400 text-xs">Không có bình luận cần duyệt.</td></tr>` : localCustomerReviews.map(r => `
                     <tr class="border-t text-xs">
                         <td class="p-2 font-bold">${r.name}</td>
@@ -693,22 +774,29 @@
         window.createNewPostAdmin = () => {
             const tag = document.getElementById('news-input-tag').value.trim();
             const title = document.getElementById('news-input-title').value.trim();
-            const media = document.getElementById('news-input-media').value.trim();
             const desc = document.getElementById('news-input-desc').value.trim();
-            if(!title || !desc) return alert("Vui lòng điền đủ Tiêu đề và Mô tả!");
-            localNewsArticles.unshift({ id: Date.now().toString(), tag: tag || "Tin tức", title, media: media || "https://images.unsplash.com/photo-1504674900247-0877df9cc836?auto=format&fit=crop&w=400&q=80", desc });
+            if(!title || !desc || !uploadedMediaBase64) return alert("Vui lòng điền đủ Tiêu đề, Mô tả và Kéo thả ảnh!");
+            
+            localNewsArticles.unshift({ id: Date.now().toString(), tag: tag || "Tin tức", title, media: uploadedMediaBase64, desc });
             syncMarketingCloud();
+            
+            document.getElementById('news-input-title').value = '';
+            document.getElementById('news-input-desc').value = '';
+            document.getElementById('preview-image').classList.add('hidden');
+            document.getElementById('drop-zone-text').classList.remove('hidden');
+            uploadedMediaBase64 = "";
             alert("Đã đăng lên trang chủ!");
         };
 
         window.deletePostAdmin = (id) => { if(confirm("Xóa bài viết này?")) { localNewsArticles = localNewsArticles.filter(p=>p.id!==id); syncMarketingCloud(); } };
         window.deleteReviewAdmin = (id) => { if(confirm("Xóa bình luận này?")) { localCustomerReviews = localCustomerReviews.filter(r=>r.id!==id); syncMarketingCloud(); } };
 
-        // --- CODE LOGIC POS ĐỒNG BỘ GỐC ---
+        // --- CODE LOGIC POS ---
         window.toggleLoginField = () => {
             const role = document.getElementById('login-role').value;
             document.getElementById('login-username').className = role === 'staff' ? 'w-full px-4 py-3 border rounded-lg' : 'hidden';
         };
+        
         window.handleLogin = () => {
             const role = document.getElementById('login-role').value;
             const uInp = role === 'admin' ? 'admin' : document.getElementById('login-username').value.trim().toLowerCase();
@@ -718,7 +806,8 @@
                 currentUser = match;
                 document.getElementById('user-display-name').textContent = match.username.toUpperCase();
                 document.getElementById('user-display-role').textContent = match.role === 'admin' ? 'Quản lý' : 'Nhân viên';
-                document.getElementById('btn-admin-panel').className = match.role === 'admin' ? 'bg-white text-red-700 px-3 py-1.5 rounded text-xs font-bold shadow' : 'hidden';
+                document.getElementById('btn-admin-panel').className = match.role === 'admin' ? 'bg-white text-red-700 px-3 py-1.5 rounded text-xs font-bold shadow hover:bg-red-50' : 'hidden';
+                document.getElementById('btn-manage-menu').className = match.role === 'admin' ? 'bg-green-600 text-white px-3 py-1.5 rounded text-xs font-bold shadow hover:bg-green-700' : 'hidden';
                 document.getElementById('btn-checkout').className = match.role === 'admin' ? 'bg-red-600 text-white font-bold py-2.5 rounded text-xs w-full' : 'hidden';
                 document.getElementById('btn-save-order').className = match.role !== 'admin' ? 'bg-blue-600 text-white font-bold py-2.5 rounded text-xs w-full' : 'hidden';
                 document.getElementById('login-screen').classList.add('hidden');
@@ -726,16 +815,21 @@
                 document.getElementById('main-app').classList.remove('hidden');
             } else alert("Mật khẩu không hợp lệ!");
         };
+        
         window.handleLogout = () => {
             currentUser = null; document.getElementById('main-app').classList.add('hidden'); document.getElementById('customer-site-view').classList.remove('hidden');
         };
+        
         window.changeTable = () => { currentTableId = document.getElementById('table-select').value; window.updateCart(); };
+        
         window.renderCategories = () => {
             document.getElementById('category-tabs').innerHTML = categories.map(c => `
                 <button onclick="window.filterCategory('${c.id}')" class="inline-block px-3 py-1.5 mr-2 rounded-full font-semibold text-xs ${currentCategory === c.id ? 'bg-red-600 text-white shadow' : 'bg-white text-slate-600 border'}">${c.name}</button>
             `).join('');
         };
+        
         window.filterCategory = (id) => { currentCategory = id; window.renderCategories(); window.renderProducts(); };
+        
         window.renderProducts = () => {
             document.getElementById('product-grid').innerHTML = products.filter(p => currentCategory === 'all' || p.category === currentCategory).map(p => `
                 <div onclick="window.addToCart(${p.id})" class="bg-white border rounded-xl p-3 cursor-pointer hover:shadow text-xs flex flex-col h-full justify-between">
@@ -744,34 +838,110 @@
                 </div>
             `).join('');
         };
+        
         window.updateCart = () => {
             let cart = tablesData[currentTableId] || []; let total = 0;
             const container = document.getElementById('cart-items');
             if (cart.length === 0) { container.innerHTML = `<div class="text-center py-6 text-slate-400 text-xs">Bàn trống</div>`; document.getElementById('total-price').textContent = '0 đ'; return; }
             container.innerHTML = cart.map(i => {
                 total += i.price * i.quantity;
-                return `<div class="bg-white border rounded p-2 mb-2 flex items-center justify-between text-xs">
-                    <div class="flex-1"><h4 class="font-bold">${i.name}</h4></div>
+                return `<div class="bg-white border rounded p-2 mb-2 flex flex-col sm:flex-row sm:items-center justify-between text-xs gap-2">
+                    <div class="flex-1">
+                        <h4 class="font-bold text-slate-800">${i.name}</h4>
+                        <span class="text-red-500 font-semibold">${new Intl.NumberFormat('vi-VN').format(i.price)} đ</span>
+                    </div>
                     <div class="flex items-center space-x-1">
-                        <button onclick="window.updateQuantity(${i.id}, -1)" class="w-5 h-5 bg-slate-100 rounded">-</button>
-                        <span class="font-bold w-4 text-center">${i.quantity}</span>
-                        <button onclick="window.updateQuantity(${i.id}, 1)" class="w-5 h-5 bg-red-100 text-red-600 rounded">+</button>
+                        <button onclick="window.updateQuantity(${i.id}, -1)" class="w-6 h-6 bg-slate-100 hover:bg-slate-200 rounded text-slate-700 font-bold">-</button>
+                        <span class="font-bold w-5 text-center">${i.quantity}</span>
+                        <button onclick="window.updateQuantity(${i.id}, 1)" class="w-6 h-6 bg-red-100 hover:bg-red-200 text-red-600 rounded font-bold">+</button>
                     </div>
                 </div>`;
             }).join('');
             document.getElementById('total-price').textContent = new Intl.NumberFormat('vi-VN', { style: 'currency', currency: 'VND' }).format(total);
         };
+        
         window.addToCart = (pId) => {
             let cart = tablesData[currentTableId] || []; const match = products.find(p => p.id === pId);
             const exist = cart.find(i => i.id === pId); if (exist) exist.quantity += 1; else cart.push({ ...match, quantity: 1 });
-            tablesData[currentTableId] = cart; window.updateCart(); syncTableToCloud(currentTableId);
+            tablesData[currentTableId] = cart; window.updateCart();
+            if(dbReady) syncTableToCloud(currentTableId);
         };
+        
         window.updateQuantity = (pId, change) => {
             let cart = tablesData[currentTableId] || []; const idx = cart.findIndex(i => i.id === pId);
-            if (idx > -1) { cart[idx].quantity += change; if (cart[idx].quantity <= 0) cart.splice(idx, 1); tablesData[currentTableId] = cart; window.updateCart(); syncTableToCloud(currentTableId); }
+            if (idx > -1) { cart[idx].quantity += change; if (cart[idx].quantity <= 0) cart.splice(idx, 1); tablesData[currentTableId] = cart; window.updateCart(); if(dbReady) syncTableToCloud(currentTableId); }
         };
-        window.clearCart = () => { tablesData[currentTableId] = []; window.updateCart(); syncTableToCloud(currentTableId); };
-        window.checkout = () => { alert("Đơn hàng thanh toán thành công!"); tablesData[currentTableId] = []; window.updateCart(); syncTableToCloud(currentTableId); };
+        
+        window.clearCart = () => { tablesData[currentTableId] = []; window.updateCart(); if(dbReady) syncTableToCloud(currentTableId); };
+        
+        window.syncTableToCloud = async (tId) => {
+            if(dbReady) await setDoc(doc(tablesRef, tId), { cart: tablesData[tId], updatedAt: Date.now() });
+        };
+
+        // IN BILL K80
+        window.checkout = () => { 
+            let cart = tablesData[currentTableId] || [];
+            if(cart.length === 0) return alert("Bàn đang trống!");
+
+            let total = 0;
+            let printRows = "";
+            cart.forEach(item => {
+                let rowTotal = item.price * item.quantity;
+                total += rowTotal;
+                printRows += `
+                    <tr>
+                        <td class="py-1 pr-1">${item.name}</td>
+                        <td class="text-center py-1">${item.quantity}</td>
+                        <td class="text-right py-1">${new Intl.NumberFormat('vi-VN').format(rowTotal)}</td>
+                    </tr>
+                `;
+            });
+
+            const selectEl = document.getElementById('table-select');
+            const tableName = selectEl.options[selectEl.selectedIndex].text;
+
+            document.getElementById('print-cart-items').innerHTML = printRows;
+            document.getElementById('print-total').textContent = new Intl.NumberFormat('vi-VN', { style: 'currency', currency: 'VND' }).format(total);
+            document.getElementById('print-table-num').textContent = tableName;
+            
+            const now = new Date();
+            document.getElementById('print-time').textContent = `${now.getHours()}:${now.getMinutes()} - ${now.getDate()}/${now.getMonth()+1}/${now.getFullYear()}`;
+
+            // Sinh mã VietQR (Tùy chỉnh mã ngân hàng BIDV và STK của bạn ở đây)
+            const bankBin = "BIDV";
+            const bankAccount = "123456789"; 
+            const qrUrl = `https://img.vietqr.io/image/${bankBin}-${bankAccount}-compact2.png?amount=${total}&addInfo=ThanhToan ${tableName.replace(' ','')}`;
+            document.getElementById('print-qr-code').src = qrUrl;
+
+            window.print();
+            
+            tablesData[currentTableId] = []; 
+            window.updateCart(); 
+            if(dbReady) syncTableToCloud(currentTableId);
+        };
+
+        // Modal Thêm Món (Menu Modal)
+        window.openMenuModal = () => document.getElementById('menu-modal').classList.remove('hidden');
+        window.closeMenuModal = () => document.getElementById('menu-modal').classList.add('hidden');
+        window.addNewProduct = () => {
+            const name = document.getElementById('new-item-name').value.trim();
+            const price = parseInt(document.getElementById('new-item-price').value);
+            const category = document.getElementById('new-item-category').value;
+            
+            if(!name || isNaN(price)) return alert("Vui lòng nhập Tên món và Giá tiền hợp lệ!");
+
+            const newId = products.length > 0 ? Math.max(...products.map(p => p.id)) + 1 : 1;
+            products.push({ id: newId, name, price, category });
+            
+            localStorage.setItem('pos_226_products', JSON.stringify(products));
+            
+            window.renderProducts();
+            window.closeMenuModal();
+            document.getElementById('new-item-name').value = '';
+            document.getElementById('new-item-price').value = '';
+            alert("Đã thêm món mới thành công!");
+        };
+
         window.openAdminModal = () => document.getElementById('admin-modal').classList.remove('hidden');
         window.closeAdminModal = () => document.getElementById('admin-modal').classList.add('hidden');
         window.closeModal = () => document.getElementById('modal').classList.add('hidden');
